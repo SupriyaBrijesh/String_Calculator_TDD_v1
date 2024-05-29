@@ -2,7 +2,6 @@
 
 require '../lib/string_calculator.rb'
 
-
 describe StringCalculator do
 
   subject(:calculator) { described_class.new }
@@ -34,4 +33,13 @@ describe StringCalculator do
   it 'should ignore numbers larger than 1000' do
     expect(calculator.add("//;\n1;2:1001")).to eq(3)
   end
+
+  it 'should return the sum of the numbers in the passed string, if the passed string contains new line delimiters' do
+    expect(calculator.add("12\n34\n56")).to eq(102)
+  end
+
+  it 'should handle multiple random delimiters' do
+    expect(calculator.add("//;\n1;2")).to eq(3)
+  end
+
 end

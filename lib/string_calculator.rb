@@ -1,5 +1,5 @@
 class StringCalculator
-  def add(numbers)
+  def self.add(numbers)
     # this piece of code accepts only string values as we are dealing with string
     raise 'only accepts a string' unless numbers.is_a?(String)
 
@@ -9,7 +9,6 @@ class StringCalculator
     # Check for negative numbers and raise an error if any are found
     negatives = integer_values.select { |num| num < 0 }
     raise "cannot accept negatives -> #{negatives.join(',')}" if negatives.any?
-
 
     # Calculate the sum, ignoring numbers greater than 1000 for limit lets check within 1k.
     integer_values.sum { |num| num <= 1000 ? num : 0 }
