@@ -26,4 +26,12 @@ describe StringCalculator do
   it 'should not accept other data types' do
     expect{ calculator.add(['123']) }.to raise_error('only accepts a string')
   end
+
+  it 'should not accept negative numbers' do
+    expect{ calculator.add('-2') }.to raise_error("cannot accept negatives -> -2")
+  end
+
+  it 'should ignore numbers larger than 1000' do
+    expect(calculator.add("//;\n1;2:1001")).to eq(3)
+  end
 end
