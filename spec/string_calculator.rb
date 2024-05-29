@@ -19,4 +19,11 @@ describe StringCalculator do
     expect(calculator.add("//;\n1;2:1001")).to eq(3)
   end
 
+  it 'should accept a string' do
+    expect{ calculator.add('1,2,3') }.not_to raise_error
+  end
+
+  it 'should not accept other data types' do
+    expect{ calculator.add(['123']) }.to raise_error('only accepts a string')
+  end
 end

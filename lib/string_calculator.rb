@@ -1,5 +1,7 @@
 class StringCalculator
   def add(numbers)
+    # this piece of code accepts only string values as we are dealing with string
+    raise 'only accepts a string' unless numbers.is_a?(String)
 
     # Split the given string into an integer array.
     integer_values = numbers.split(/[^0-9-]+/).map(&:to_i)
