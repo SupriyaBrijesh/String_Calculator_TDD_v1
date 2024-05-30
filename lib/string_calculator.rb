@@ -1,5 +1,5 @@
 class StringCalculator
-  def self.add(numbers)
+  def add(numbers)
     # this piece of code accepts only string values as we are dealing with string
     raise 'only accepts a string' unless numbers.is_a?(String)
 
